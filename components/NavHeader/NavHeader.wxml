@@ -1,0 +1,8 @@
+<!--components/NavHeader/NavHeader.wxml-->
+<view class="rec-header">
+    <text class="rec-title">{{title}}</text>
+    <view class="rec-second">
+        <text style="font-size: 20px;">{{descrip}}</text>
+        <text class="rec-more">更多</text>
+    </view>
+</view>

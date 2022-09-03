@@ -1,0 +1,19 @@
+/* components/NavHeader/NavHeader.wxss */
+.rec-header{
+    padding: 10px;
+  }
+.rec-title {
+    font-size: 16px;
+    line-height: 32px;
+    color: #666;
+  }
+  .rec-second {
+    display: flex;
+    justify-content: space-between;
+  }
+  .rec-more {
+    font-size: 16px;
+    padding:0 5px;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }

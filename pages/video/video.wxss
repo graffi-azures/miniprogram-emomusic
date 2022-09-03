@@ -1,0 +1,10 @@
+/* pages/video/video.wxss */
+.search{
+  border: 1rpx solid #eee;
+  flex: 1 0 auto;
+  padding:5rpx 0;
+  margin: 0 20rpx; 
+  text-align: center;
+  line-height: 60rpx;
+  color: #29acee;
+}

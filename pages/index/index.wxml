@@ -1,0 +1,94 @@
+<!--pages/index/index.wxml-->
+<!-- <view class="indexContainer">
+  <image class="avatarUrl" src="{{userInfo.avatarUrl}}"></image>
+  <text>{{userInfo.nickName}}</text>
+  <button class="commonBtn" bindgetuserinfo="getUserInfo" open-type="getUserInfo">获取用户信息</button>
+  <view class="pointone" catchtap="tologs">
+    <!-- <text catchtap="handleCld">hello world</text> -->
+<!-- <text>hello world</text>
+  </view>
+</view> -->
+<view class="Container">
+    <!-- 轮播图 -->
+    <swiper class="banner" autoplay="true" indicator-dots="true" indicator-color="#ffffff" indicator-active-color="#dc4c33">
+        <!-- <swiper-item>
+      <image src="/static/images/swiper.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/static/images/swiper.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/static/images/swiper.jpg"></image>
+    </swiper-item> -->
+        <!-- 从服务器取数据时使用列表渲染wx:for如下: -->
+        <swiper-item wx:for="{{bannerList}}" wx:key="bannerId">
+            <image src="{{item.pic}}"></image>
+        </swiper-item>
+    </swiper>
+    <!-- 导航区 -->
+    <scroll-view enable-flex="true" scroll-x="true">
+        <view class="navContainer">
+            <view class="navItem">
+                <text class="iconfont icon-meirigengxin"></text>
+                <text>每日推荐</text>
+            </view>
+            <view class="navItem">
+                <text class="iconfont icon-FM_weixuanze"></text>
+                <text>私人FM</text>
+            </view>
+            <view class="navItem">
+                <text class="iconfont icon-gedan"></text>
+                <text>歌单</text>
+            </view>
+            <view class="navItem">
+                <text class="iconfont icon-paihangbang"></text>
+                <text>排行榜</text>
+            </view>
+            <view class="navItem">
+                <text class="iconfont icon-shu"></text>
+                <text>有声书</text>
+            </view>
+            <view class="navItem">
+                <text class="iconfont icon-zhuanji"></text>
+                <text>数字专辑</text>
+            </view>
+            <view class="navItem">
+                <text class="iconfont icon-zhibohuikan"></text>
+                <text>直播</text>
+            </view>
+            <view class="navItem">
+                <text class="iconfont icon-youxi"></text>
+                <text>游戏专区</text>
+            </view>
+        </view>
+    </scroll-view>
+
+    <!-- 推荐区 -->
+    <view class="recContainer">
+        <!-- 推荐头部区 -->
+        <NavHeader title="推荐歌曲" descrip="推荐歌单"></NavHeader>
+        <!-- 推荐内容区 -->
+        <scroll-view class="scrollRecommend" enable-flex="true" scroll-x="true">
+            <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id">
+                <image src="{{item.picUrl}}"></image>
+                <text>{{item.name}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 推荐新音乐区 -->
+    <view class="newSongContainer">
+        <!-- 推荐新音乐头部区 -->
+        <NavHeader title="" descrip="大家都在听"></NavHeader>
+        <!-- 推荐新音乐内容区 -->
+        <swiper class="newSongList" next-margin="15px">
+            <swiper-item class="swiperItem" wx:for="{{newSongList}}" wx:key="index">
+                <view class="musicItem" wx:for="{{item}}" wx:key="id" wx:for-item="itemName">
+                    <image src="{{itemName.picUrl}}" style="width: 50px;height: 50px;"></image>
+                    <text class="musicName">{{itemName.name}}</text>
+                    <text class="musicArtist">-{{itemName.song.artists[0].name}}</text>
+                    <!-- <image style="width: 50px;height: 50px;margin-left: auto;"></image> -->
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>
